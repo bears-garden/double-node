@@ -1,6 +1,6 @@
 {
   "name": "bg-double-node",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "double node with next and prev",
   "main": "lib/index.js",
   "scripts": {
@@ -8,8 +8,8 @@
     "pretest": "npm run build",
     "test": "jasmine"
   },
-  "engines":{
-    "node":">=7.4.0"
+  "engines": {
+    "node": ">=7.4.0"
   },
   "repository": {
     "type": "git",
