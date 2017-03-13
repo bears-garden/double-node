@@ -1,0 +1,35 @@
+{
+  "name": "bg-double-node",
+  "version": "0.0.1",
+  "description": "double node with next and prev",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "pretest": "npm run build",
+    "test": "jasmine"
+  },
+  "engines":{
+    "node":">=7.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bears-garden/bg-double-node.git"
+  },
+  "keywords": [
+    "double-node"
+  ],
+  "author": "Arthur Anderson <arthur.anderson3@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bears-garden/bg-double-node/issues"
+  },
+  "homepage": "https://github.com/bears-garden/bg-double-node#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-env": "^1.2.1",
+    "jasmine": "^2.5.3"
+  },
+  "dependencies": {
+    "lodash.defaults": "^4.2.0"
+  }
+}
