@@ -27,9 +27,11 @@
   "devDependencies": {
     "babel-cli": "^6.24.0",
     "babel-preset-env": "^1.2.1",
-    "jasmine": "^2.5.3"
+    "jasmine": "^2.5.3",
+    "uuid": "^3.0.1"
   },
   "dependencies": {
-    "lodash.defaults": "^4.2.0"
+    "lodash.defaults": "^4.2.0",
+    "lodash.isfunction": "^3.0.8"
   }
 }
