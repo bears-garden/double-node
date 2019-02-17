@@ -12,6 +12,7 @@ const isFunction = require("lodash.isfunction");
  */
 
 function defComparer( l, r ){ return l === r; }
+
 class DoubleNode{
     constructor( obj ){
         let defObj = { next: null, prev: null, data:null};

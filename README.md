@@ -1,8 +1,8 @@
-# bg-double-node
+# @bears-garden/double-node
 node with next and previous
 
 # Usage
-`var Node = require("bg-double-node");`  
+`var Node = require("@bears-garden/double-node");`  
 
 
 ### insert
@@ -11,9 +11,9 @@ node with next and previous
 `var list = Node.insert(null,1);`    
 `list = Node.insert(list,2);`  
 
-### append 
+### append
 @returns new node  
-  
+
 `var node = Node.append(list,2);`  
 
 ### find

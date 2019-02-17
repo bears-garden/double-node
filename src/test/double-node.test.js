@@ -1,26 +1,26 @@
 /**
  * Created by arthuranderson on 3/12/17.
  */
+import DNode from '../double-node';
 
 describe("double-node", function() {
     "use strict";
-    let DNode = require("../lib/index");
 
-    it("#ctor defaults", function() {
+    test("#ctor defaults", function() {
         let node = new DNode();
         expect( node.next ).toEqual( null );
         expect( node.data ).toEqual( null );
         expect( node.prev ).toEqual( null );
     });
 
-    it("#create_node", function(){
+    test("#create_node", function(){
         let node = DNode.create_node();
         expect( node.next ).toEqual( null );
         expect( node.data ).toEqual( null );
         expect( node.prev ).toEqual( null );
     });
 
-    it( "#insert null", function() {
+    test( "#insert null", function() {
         let head = DNode.insert(null, 1);
 
         expect( head.data ).toEqual( 1 );
@@ -28,7 +28,7 @@ describe("double-node", function() {
         expect( head.next ).toEqual( null );
     });
 
-    it( "#insert_node null", function() {
+    test( "#insert_node null", function() {
         let head = null;
         let node = DNode.create_node(1);
         head = DNode.insert_node(head, node);
@@ -38,7 +38,7 @@ describe("double-node", function() {
         expect( head.next ).toEqual( null );
     });
 
-    it( "#insert 2", function() {
+    test( "#insert 2", function() {
         let head = DNode.insert(null, 1);
         head = DNode.insert( head, 2 );
         expect( head.data ).toEqual( 2 );
@@ -48,7 +48,7 @@ describe("double-node", function() {
         expect( head.next.next ).toEqual( null );
     });
 
-    it( "#insert_node 2", function() {
+    test( "#insert_node 2", function() {
         let head = null;
         let node = DNode.create_node(1);
         head = DNode.insert_node(head, node);
@@ -63,7 +63,7 @@ describe("double-node", function() {
         expect( head.next.next ).toEqual( null );
     });
 
-    it("#insert multiple", function() {
+    test("#insert multiple", function() {
         let head = null;
         for( let idx = 1; idx < 11; idx++ ){
             head = DNode.insert( head, idx);
@@ -75,7 +75,7 @@ describe("double-node", function() {
         }
     });
 
-    it("#insert_node multiple", function() {
+    test("#insert_node multiple", function() {
         let head = null;
         let node = null;
         for( let idx = 1; idx < 11; idx++ ){
@@ -89,7 +89,7 @@ describe("double-node", function() {
         }
     });
 
-    it( "#append null head", function() {
+    test( "#append null head", function() {
         let head = DNode.append(null, 1);
 
         expect( head.data ).toEqual( 1 );
@@ -97,7 +97,7 @@ describe("double-node", function() {
         expect( head.next ).toEqual( null );
     });
 
-    it( "#append_node null head", function() {
+    test( "#append_node null head", function() {
         let head = null;
         let node = DNode.create_node(1);
         head = DNode.append_node(head, node);
@@ -107,7 +107,7 @@ describe("double-node", function() {
         expect( head.next ).toEqual( null );
     });
 
-    it( "#append 2", function() {
+    test( "#append 2", function() {
         let head = DNode.append(null, 1);
         let tail = DNode.append(head, 2 );
 
@@ -121,7 +121,7 @@ describe("double-node", function() {
         expect( head.next.next ).toEqual( null );
     });
 
-    it( "#append_node 2", function() {
+    test( "#append_node 2", function() {
         let node = DNode.create_node(1);
         let tail = DNode.append_node(null, node);
         let node2 = DNode.create_node(2);
@@ -137,8 +137,8 @@ describe("double-node", function() {
         expect( node.prev ).toEqual( null );
         expect( node.next.next ).toEqual( null );
     });
-    
-    it("#append multiple", function() {
+
+    test("#append multiple", function() {
         let head = DNode.append( null, 0 );
         let tail = head;
         for( let idx = 1; idx < 11; idx++ ){
@@ -150,8 +150,8 @@ describe("double-node", function() {
             expect( cur.data ).toEqual( idx );
         }
     });
-    
-    it("#append_node multiple", function() {
+
+    test("#append_node multiple", function() {
         let head = DNode.create_node(0);
         let tail = head;
         let app_node = null;
@@ -166,7 +166,7 @@ describe("double-node", function() {
         }
     });
 
-    it( "#find_node", function() {
+    test( "#find_node", function() {
         let head = DNode.insert(null, 1);
         head = DNode.insert(head, 2);
 
@@ -184,7 +184,7 @@ describe("double-node", function() {
         return left.id === right.id;
     };
 
-    it( "#find_node {id:1}", function() {
+    test( "#find_node {id:1}", function() {
         let head = DNode.insert(null, {id:1});
         head = DNode.insert(head, {id:2});
 
@@ -198,7 +198,7 @@ describe("double-node", function() {
         expect( found_node2.data.id ).toEqual( head.data.id );
     });
 
-    it( "#predecessor", function() {
+    test( "#predecessor", function() {
         let head = DNode.create_node(0);
         for( let idx = 1; idx < 10; idx++ ){
             head = DNode.insert(head, idx);
@@ -210,7 +210,7 @@ describe("double-node", function() {
         }
     });
 
-    it( "#predecessor {id:1}", function() {
+    test( "#predecessor {id:1}", function() {
         let len = 10;
         let values = new Array(len);
         for( let idx = 0; idx < len; idx++ ){
@@ -228,7 +228,7 @@ describe("double-node", function() {
         }
     });
 
-    it( "#predecessor_node", function() {
+    test( "#predecessor_node", function() {
         let head = DNode.create_node( 0 );
         let node = null;
         for( let idx = 1; idx < 10; idx++ ){
@@ -245,7 +245,7 @@ describe("double-node", function() {
         }
     });
 
-    it( "#remove", function(){
+    test( "#remove", function(){
         let head = DNode.create_node(1);
         head = DNode.insert(head, 2);
         head = DNode.insert(head, 3 );
@@ -264,7 +264,7 @@ describe("double-node", function() {
         expect( DNode.size(head) ).toEqual( 1 );
     });
 
-    it( "#remove_node", function(){
+    test( "#remove_node", function(){
         let head = DNode.create_node(1);
         head = DNode.insert(head, 2);
         head = DNode.insert(head, 3 );
@@ -284,7 +284,7 @@ describe("double-node", function() {
         expect( DNode.size(head) ).toEqual( 1 );
     });
 
-    it( "#remove head", function(){
+    test( "#remove head", function(){
         let head = DNode.create_node( 1 );
         head = DNode.insert(head, 2);
         head = DNode.insert(head, 3 );
@@ -297,7 +297,7 @@ describe("double-node", function() {
         expect( head ).toEqual( null );
     });
 
-    it( "#remove_node head", function(){
+    test( "#remove_node head", function(){
         let head = DNode.create_node( 1 );
         head = DNode.insert(head, 2);
         head = DNode.insert(head, 3 );
@@ -313,7 +313,7 @@ describe("double-node", function() {
         expect( head ).toEqual( null );
     });
 
-    it( "#remove tail", function(){
+    test( "#remove tail", function(){
         let head = DNode.append(null, 1 );
         let tail = DNode.append(head, 2);
         tail = DNode.append(tail, 3 );
@@ -325,7 +325,7 @@ describe("double-node", function() {
         expect( head ).toEqual( null );
     });
 
-    it( "#remove_node tail", function(){
+    test( "#remove_node tail", function(){
         let head = DNode.append(null, 1 );
         let tail = DNode.append(head, 2);
         tail = DNode.append(tail, 3 );
@@ -341,7 +341,7 @@ describe("double-node", function() {
         expect( head ).toEqual( null );
     });
 
-    it( "#remove middle", function(){
+    test( "#remove middle", function(){
         let head = DNode.create_node( 1 );
         let tail = DNode.append(head, 2);
         tail = DNode.append(tail, 3 );
@@ -349,7 +349,7 @@ describe("double-node", function() {
         expect( DNode.size( head) ).toEqual(2);
     });
 
-    it( "#remove_node middle", function(){
+    test( "#remove_node middle", function(){
         let head = DNode.create_node( 1 );
         let tail = head;
         for( let idx = 2; idx < 11; idx++ ){
@@ -359,8 +359,8 @@ describe("double-node", function() {
         head = DNode.remove_node(head, found );
         expect( DNode.size( head) ).toEqual(9);
     });
-    
-    it( "#size", function(){
+
+    test( "#size", function(){
         let head = DNode.create_node(1);
         head = DNode.insert(head, 2);
         expect( DNode.size( head )).toEqual( 2 );

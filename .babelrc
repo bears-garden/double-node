@@ -1,7 +1,3 @@
 {
-  "presets": ["env"],
-  "plugins": ["transform-es2015-classes"],
-  "ignore": [
-    "spec/**/*.js"
-  ]
+  "presets": ["@babel/env"]
 }
