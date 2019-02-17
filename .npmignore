@@ -3,3 +3,5 @@ src/
 .editorconfig
 .gitignore
 jest.config.js
+.idea/
+*.tgz
