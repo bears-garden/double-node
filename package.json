@@ -1,6 +1,6 @@
 {
   "name": "@bears-garden/double-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "double node with next and prev",
   "main": "lib/index.js",
   "scripts": {
