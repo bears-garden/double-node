@@ -5,7 +5,11 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src -d lib --ignore \"src/**/*.test.js\"",
-    "test": "jest --watch"
+    "posttest": "npm run-script build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "prepack": "npm run-script test",
+    "preversion": "npm run-script test"
   },
   "engines": {
     "node": ">=10.13.0"
